@@ -1,38 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+} /* "*" estilos generales para la app */
+
+/* Div principal del componente App */
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightslategray; /* background en gris claro */
   text-align: center;
+  width: 100%;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Div centrado */
+.centeredDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 60%;
+  border-radius: 30px; /* Div redondeado */
+  background-color: white; /* seccion en blanco */
+  height: 90%;
+  padding: 15px; /* Padding en bordes del div */
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* Frase sobre perros*/
+h1{
+  text-align: center;
+  width: 90%;
+  padding: 10px; /* Padding entre elementos */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Imagen de perros */
+.dogImage {
+  width: 40%;
+  height: 60%;
+  border-radius: 30px; /* Imagen redondeada */
+  padding: 10px; /* Padding entre elementos */
+}
+
+/* Botón para cambiar datos de perros */
+button { 
+  --color: #5500be;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 30px; /* Botón redondeado */
+  font-weight: 500;
+  color: var(--color);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px; /* Padding entre elementos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color); /* cambia de color al hacer hover */
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+button:hover {
+  color: #fff; /* cambia de color al hacer hover */
+  font-weight: bold;
+}
+button:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+}
+button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+button:active:before {
+  background: #5500be;
+  transition: background 0s;
+}
+
+/* Media queries para el responsive de la app */
+@media (max-width: 1092px) {
+  h1 {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .dogImage {
+    width: 60%;
+  }
+}
+@media (max-width: 946px) {
+  .centeredDiv {
+    width: 70%;
+    height: 90%;
+  }
+  h1 {
+    font-size: 16px;
+  }
+  .dogImage {
+    width: 70%;
+  }
+}
+@media (max-width: 744px) {
+  .centeredDiv {
+    width: 80%;
+    height: 80%;
+  }
+  .dogImage {
+    width: 70%;
+    height: 50%;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 14px;
+  }
+  .centeredDiv {
+    width: 90%;
+    height: 90%;
+  }
+  .dogImage {
+    width: 80%;
+    height: 60%;
   }
 }
