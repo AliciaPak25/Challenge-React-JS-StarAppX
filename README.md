@@ -1,3 +1,4 @@
+![dogs](https://user-images.githubusercontent.com/90863842/204173861-ca0ab03a-a067-4833-b1e0-df69fd2280c4.PNG)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
